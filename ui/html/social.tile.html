@@ -1,0 +1,45 @@
+<div class="social">
+	<span class="tilehead">Connect</span>
+	<span id="connect-load" class="loading" style="display:none;">Loading ...</span>
+	<div id="fb-root"></div>
+	<div class="fb-like-box" data-href="http://www.facebook.com/pages/Adhyayan/220867098009317" data-width="185" data-height="275" data-show-faces="true" data-stream="false" data-header="false" data-border-color="#00b050" ></div>
+	
+	<!--<div class="fb-like" data-send="false" data-width="5" data-show-faces="true"></div>-->
+	
+	<!--<div id="google-root" style="display: none;">
+		<img src="ui/img/officials/google.png" style="height:1.5em" />
+		<div class="g-plusone" data-annotation="bubble" data-width="180" data-href="http://adhyayan.org.in"></div>
+	</div>-->
+	
+	<div class="twitter" style="display: none;">
+		<p><a href="http://twitter.com/adhyayan_itbhu" class="tw-logo"><img src="ui/img/officials/twitter.png" /></a></p>
+		<div id="tw-root"></div>
+	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			/**
+			 *	@plugin Facebook G+ & Twitter Social Plugin
+			**/
+			$('#connect-load').delay(5000).fadeIn(1500).delay(500).fadeOut(1500, function(){
+				(function(d, s, id, tid, t, gid) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					
+					if (d.getElementById(id)) return;
+					js = d.createElement(s); js.id = id;
+					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+					fjs.parentNode.insertBefore(js, fjs);
+					
+					var tjs = d.createElement(s); tjs.id = tid;
+					tjs.src = "ui/js/jquery.jtweetsanywhere-1.3.1.min.js";
+					fjs.parentNode.insertBefore(tjs, fjs);
+					
+					/*var gjs = d.createElement(s); gjs.id = gid;
+					gjs.src = "//apis.google.com/js/plusone.js";
+					fjs.parentNode.insertBefore(gjs, fjs);*/
+				}(document, 'script', 'facebook-jssdk', 'twitter-jssdk', 'tw-root', 'google-jssdk'));
+			});
+		});
+	</script>
+</div>
+

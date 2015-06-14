@@ -1,0 +1,11 @@
+.parikshan {}
+.parikshan table { width: 100%; background: white; padding: 10px; border: 1px solid gray; }
+.parikshan .qno { font-size: small; font-weight: bold; }
+.parikshan .small { font-size: small; font-weight: bold; color: gray; }
+.parikshan .question {  }
+.parikshan label { padding: 5px 10px; display: block; border: 1px solid white; }
+.parikshan label.opt:hover { background: #CEE4BB; border: 1px solid darkgreen; }
+.parikshan .tail { margin-top: 15px; }
+
+.parikshan label.green { background: #CEE4BB; border: 1px solid darkgreen; }
+.parikshan label.red { background: #EAC9C5; border: 1px solid darkred; }

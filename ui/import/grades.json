@@ -1,0 +1,11 @@
+{
+	"valid":true,
+	"tpl":[
+		{ "tpl":"#tpl-grd-tcs", "sel":">.bands" }
+	],
+	"imports":[
+		"ui/tpl/executive/grade.tpl.html",
+		"ui/tpl/display/pagination.tpl.html",
+		"ui/tpl/display/menu.tpl.html"
+	]
+}

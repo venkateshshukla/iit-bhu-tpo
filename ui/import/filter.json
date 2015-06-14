@@ -1,0 +1,11 @@
+{
+	"valid":true,
+	"tpl":[
+		{ "tpl":"#tpl-fltr-tcs", "sel":">.bands" }
+	],
+	"imports":[
+		"ui/tpl/executive/filter.tpl.html",
+		"ui/tpl/display/pagination.tpl.html",
+		"ui/tpl/display/menu.tpl.html"
+	]
+}

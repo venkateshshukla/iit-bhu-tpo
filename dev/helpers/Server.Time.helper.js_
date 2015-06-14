@@ -1,0 +1,75 @@
+/**
+ *	@helper serverTime 
+ *
+ *	@param cntr
+ *	@param url
+ *
+**/
+Adhyayan.core.helper.serverTime = function($cntr, $url){
+	Adhyayan.core.constant.now = [];
+	var days = [31,28,31,30,31,30,31,31,30,31,30,31];
+	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	
+	var parse = function($time){
+		// seconds minutes hours day month year
+		Adhyayan.core.constant.now = $time.split(' ');
+	}
+	
+	var tick = function(){
+		var now = Adhyayan.core.constant.now;
+		if(now.length){
+			now[0]++;
+				if( now[0]>59 ) {
+					now[0]=0; now[1]++;
+					if( now[1]>59 ) {
+						now[1]=0; now[2]++;
+						if( now[2]>23 ) {
+							now[2]=0; now[3]++;
+							if( now[3] > days[now[4]-1] ) {
+								now[3]=1; now[4]++;
+								if( now[4]>12 ) {
+									now[4]=1; now[5]++;
+				}}}}}
+			update($cntr, now);
+		}
+	}
+	
+	var update = function($display, $p){
+		var $ampm = " am";
+		var $hh = $p[2];
+		if($hh >= 12) $ampm = " pm"; 
+		if($hh > 12) $hh -= 12;
+		if($hh == 0) $hh = 12;
+		if($hh < 10) $hh = "0" + $hh/1;
+		var $mm = $p[1];
+		if($mm < 10) $mm = "0"+$mm/1;
+		var $colon="&nbsp;";
+		if( $p[0]%2==0 ) $colon=":";
+		var $dd = $p[3];
+		var $month = months[ $p[4]-1 ];
+		var $yyyy = $p[5];
+		$display.html(
+			"<span>"+$hh+"</span>"+
+			"<span>"+$colon+"</span>"+
+			"<span>"+$mm+$ampm+', '+$dd+' '+$month+' '+$yyyy+' IST</span>'
+		);
+	}
+	
+	var refresh = function(){
+		$.ajax({
+			url : $url,
+			dataType : 'text',
+			type : 'POST',
+			success : function($data){
+				parse($data);
+			}
+		});
+	}
+	
+	refresh();
+	
+	var tickTimer = window.setInterval(tick, 1000);
+	var refreshTimer = window.setInterval(refresh, 60000);
+	
+	return true;
+};

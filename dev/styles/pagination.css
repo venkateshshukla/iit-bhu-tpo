@@ -1,0 +1,1 @@
+/* pagination styles */.pagination { margin: 5px 1em; font-size: small; }.pagination .page-link a { padding: 5px; }.pagination .page-link.current a { color: black; cursor: default; }

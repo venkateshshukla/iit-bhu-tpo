@@ -1,0 +1,12 @@
+{
+	"valid":true,
+	"tpl":[
+		{ "tpl":"#tpl-pst-tcs", "sel":">.bands" }
+	],
+	"imports": [
+		"ui/tpl/display/post.tpl.html",
+		"ui/tpl/display/comment.tpl.html",
+		"ui/tpl/display/pagination.tpl.html",
+		"ui/tpl/display/menu.tpl.html"
+	]
+}

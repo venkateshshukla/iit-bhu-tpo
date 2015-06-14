@@ -1,0 +1,13 @@
+{
+	"valid":true,
+	"tpl":[
+		{ "tpl":"#tpl-brd-tcs", "sel":">.bands" }
+	],
+	"imports":[
+		"ui/tpl/display/board.tpl.html",
+		"ui/tpl/display/post.tpl.html",
+		"ui/tpl/display/comment.tpl.html",
+		"ui/tpl/display/pagination.tpl.html",
+		"ui/tpl/display/menu.tpl.html"
+	]
+}

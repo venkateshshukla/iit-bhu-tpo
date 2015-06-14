@@ -1,0 +1,11 @@
+{
+	"valid":true,
+	"tpl":[
+		{ "tpl":"#tpl-idty-tcs", "sel":">.bands" }
+	],
+	"imports": [
+		"ui/tpl/access/identity.tpl.html",
+		"ui/tpl/display/pagination.tpl.html",
+		"ui/tpl/display/menu.tpl.html"
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"valid":true,
+	"tpl":[
+		{ "tpl":"#tpl-prmn-tcs", "sel":">.bands" }
+	],
+	"imports": [
+		"ui/tpl/access/permission.tpl.html",
+		"ui/tpl/display/pagination.tpl.html",
+		"ui/tpl/display/menu.tpl.html"
+	]
+}

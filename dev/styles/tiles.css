@@ -1,0 +1,7 @@
+/* tiles styles */
+.rhythm.tile { background-image: url('../img/tiles/rhythm.png'); }
+.successmsg.tile { background-image: url('../img/tiles/success.png'); }
+.errormsg.tile { background-image: url('../img/tiles/error.png'); }
+.user.tile { background-image: url('../img/tiles/user.png'); }
+.male-user.tile { background-image: url('../img/tiles/male-user.png'); }
+.female-user.tile { background-image: url('../img/tiles/female-user.png'); }

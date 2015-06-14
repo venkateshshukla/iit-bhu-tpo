@@ -1,0 +1,4 @@
+/* azure div styles for 1024 */
+.azure-left { float: left; width: 150px   }
+.azure-right { float: right; width: 150px }
+.azure-center { margin-left: 150px; margin-right: 150px; }

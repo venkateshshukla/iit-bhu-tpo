@@ -1,0 +1,38 @@
+/**
+ *	@helper serverPortal
+ *
+ *	@param cntr
+ *	@param url
+ *
+**/
+Adhyayan.core.helper.serverPortal = function($cntr, $url){
+	var total = [];
+	
+	var $template = $.template('\
+		<span class="tilehead" style="padding-bottom: 0;">Adhyayan Registrations</span>\
+		<li><a href="profiles/16/Adhyayan Registrations/" class="ui"><span class="total">${total}</span></a></li>\
+		<div class="small pad" style="white-space: normal;">${story}</div><a style="padding-left:10px;" href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal"  data-url="http://itbhu.ac.in/events/cse/adhyayan/" data-text="${total} registrations at @adhyayan_itbhu 2012 till now. ${story}" data-count="none">Tweet this</a>\
+		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>\
+		<div>&nbsp;</div>\
+		<span class="tilehead">Events and Deadlines</span>\
+		{{each events}}\
+			<li id="${$value.id}"><a href="${$value.url}" class="ui">${$index}<br/><span class="small">${$value.event}</span><br/><span class="timer"></span></a></li>\
+		{{/each}}\
+	');
+	
+	$.ajax({
+		url : $url,
+		dataType : 'json',
+		type : 'POST',
+		success : function($data){
+			$cntr.hide().html($.tmpl($template, $data)).fadeIn(1500);
+			for(var $i in $data['events']){
+				$time = $data['events'][$i]['time'];
+				$id = $data['events'][$i]['id'];
+				Adhyayan.core.helper.portalTimer('#' + $id + ' .timer', $time*1000, 'Event Started');
+			}
+		}
+	});
+	
+	return true;
+};

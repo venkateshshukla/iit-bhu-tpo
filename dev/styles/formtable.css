@@ -1,0 +1,30 @@
+/* formtable styles */
+table.formtable { width: 100%; border-collapse: collapse; }
+table.formtable>tbody>tr>td { padding: 5px 0; vertical-align: top; }
+table.formtable>tbody>tr>td:first-child { width: 20%; text-align: right; }
+table.formtable>tbody>tr>td:last-child { width: 78%; padding-left: 15px; }
+
+table.formtable.part15>tbody>tr>td:first-child { width: 15%; text-align: right; }
+table.formtable.part15>tbody>tr>td:last-child { /*width: 84%;*/ padding-left: 15px; }
+
+table.formtable.part10>tbody>tr>td:first-child { width: 10%; text-align: right; }
+table.formtable.part10>tbody>tr>td:last-child { /*width: 90%;*/ padding-left: 15px; }
+
+table.formtable.part20>tbody>tr>td:first-child { width: 20%; text-align: right; }
+table.formtable.part20>tbody>tr>td:last-child { /*width: 80%; */ padding-left: 15px; }
+
+/* special formtable styles */
+table.formtable.grey>tbody>tr>td:first-child { color: grey; }
+table.formtable.nopad>tbody>tr>td { padding: 0; }
+
+table.formtable td.section { text-align: left !important; }
+
+/* wysiwyg styles */
+.wysiwyg { background-color: white !important; } 
+
+/* striped styles */
+table.tstriped>tbody>tr:odd-child { background-color: #ECF3F7; }
+table.tstriped>tbody>tr:even-child { background-color: white; }
+
+/* hovered styles */
+table.thovered>tbody>tr:hover { background-color: #ECF3F7; }

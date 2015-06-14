@@ -1,0 +1,1 @@
+/* canvas and hover styles */.canvas { position: relative; }.canvas .hover { display : none; position: absolute; }.canvas:hover .hover { display: block; }.canvas .options { background-image: url('../img/icons/settings.gif'); background-color: transparent; background-repeat: no-repeat; height: 15px; width: 5px; }

@@ -1,0 +1,56 @@
+/**
+ *	@helper portalTimer
+ *
+ *	@param cntr
+ *	@param url
+ *
+**/
+Adhyayan.core.helper.portalTimer = function($cntr, $time, $msg, $last, $handler){
+	$last = $last || false ? $last : 'to go';
+	$msg = $msg || false ? $msg : '';
+	var minuteTimer = false;
+	
+	var minute = function(){
+		var now = Adhyayan.core.constant.now;
+		
+		if(now.length){
+		var $now_ts = new Date(now[5], now[4]-1, now[3], now[2], now[1], now[0], 0).getTime();
+		var $timer = $time - $now_ts;
+		
+			if($timer > 0){
+				$timer = new Date($timer + 60*1000);
+				var $days = 31 * $timer.getUTCMonth() + $timer.getUTCDate() -1;
+				if($days != 0){
+					$days += ' <span class="small">day(s)</span> ';
+				}
+				else {
+					$days = '';
+				}
+				
+				var $hours = $timer.getUTCHours();
+				if($hours < 10) $hours = "0" + $hours/1;
+				
+				var $minutes = $timer.getUTCMinutes();
+				if($minutes < 10) $minutes = "0" + $minutes/1;
+				
+				$($cntr).html($days + $hours + ':' + $minutes + ' <span class="small">hour(s) '+ $last +'</span>');
+			}
+			else{
+				$($cntr).html($msg);
+				
+				if(minuteTimer || false){
+					clearInterval(minuteTimer);
+				}
+				
+				if($handler || false){
+					$handler();
+				}
+			}
+		}
+	}
+	
+	minute();
+	minuteTimer = window.setInterval(minute, 60000);
+	
+	return true;
+};

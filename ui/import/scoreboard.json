@@ -1,0 +1,10 @@
+{
+	"valid":true,
+	"tpl":[
+		{ "tpl":"#tpl-scrbrd-tcs", "sel":">.bands" }
+	],
+	"imports":[
+		"ui/tpl/submission/scoreboard.tpl.html",
+		"ui/tpl/display/pagination.tpl.html"
+	]
+}
