@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="google-signin-client_id" content="244942183777-fi8bp76m3in1rueqjnkghp152d4hfpga.apps.googleusercontent.com" />
 		<base href="<?php echo ROOTPATH ?>/"  />
 		<link rel='shortcut icon' href="ui/img/executive/itbhu.png"/>
 		<!--<link rel="stylesheet" type="text/css" href="ui/css/jquery.jtweetsanywhere-1.3.1.css" />-->
@@ -27,7 +28,7 @@
 	<body>
 		<div class="body">
 		<span id="load-status"><?php echo $STATUS; ?></span>
-		
+
 		<div class="header-container">
 			<div class="page">
 				<table class="layout"><tbody>
@@ -40,20 +41,17 @@
 								<a href="mailto:tpo@iitbhu.ac.in">tpo@iitbhu.ac.in</a> |
 								<a href="mailto:ittpo@sify.com">ittpo@sify.com</a> |
 								<a href="tel:+915422307007">+91-542-2307007</a> |
-								<a href="tel:+915422368160">+91-542-2368160</a> 
+								<a href="tel:+915422368160">+91-542-2368160</a>
 							</p>
 						</td>
 					</tr>
 				</tbody></table>
-				
+
 				<div class="mainmenu">
 					<?php echo $MAINMENU; ?>
-					
+
 					<?php echo $STATEMENU; ?>
 				</div>
 				<div class="clearfloat"></div>
 			</div>
 		</div>
-		
-
-		

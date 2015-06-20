@@ -1,4 +1,5 @@
 cache/
+docs/
 old/
 forum/
-*/error_log
+error_log
