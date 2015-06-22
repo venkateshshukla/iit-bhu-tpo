@@ -149,7 +149,9 @@ class InterfaceOpenidWorkflow implements Service {
 			if ($ticket) {
 				$data = $ticket->getAttributes();
 
-				if (!isset($data['email'])) {
+				$payload = $data['payload'];
+
+				if (!isset($payload['email'])) {
 					$memory['valid'] = false;
 					$memory['msg'] = 'Invalid OpenID';
 					$memory['status'] = 500;
@@ -157,7 +159,7 @@ class InterfaceOpenidWorkflow implements Service {
 					return $memory;
 				}
 
-				$memory['email'] = $data['email'];
+				$memory['email'] = $payload['email'];
 
 				$workflow = array(
 				array(
