@@ -1,36 +1,41 @@
+var googleUser = {};
 var signInInit = function() {
-	var values = {
-		client_id: '244942183777-fi8bp76m3in1rueqjnkghp152d4hfpga.apps.googleusercontent.com',
-		fetch_basic_profile: false,
-		scope: 'openid'
+
+	gapi.load('auth2', function(){
+      			// Retrieve the singleton for the GoogleAuth library and set up the client.
+      			auth2 = gapi.auth2.init({
+   				client_id: '244942183777-fi8bp76m3in1rueqjnkghp152d4hfpga.apps.googleusercontent.com',
+				cookiepolicy: 'single_host_origin',
+    				fetch_basic_profile: false,
+    				scope: 'email'
+  			});
+      			auth2.attachClickHandler('customBtn', {}, onSuccess, onFailure);
+			
+			auth2.signIn().then(function() {
+				 
+				var googleUser = auth2.currentUser.get();
+				var id = googleUser.getId();
+				var id_token = googleUser.getAuthResponse().id_token;
+				console.log(id);
+				console.log(id_token);
+				window.location.replace('auth.php?idtoken=' + id_token);
+
+  			});
+   		 });
+
+
+	var onSuccess = function(googleUser) {
+		console.log('Signed in as ' + user.getId());
 	};
 
-	var onSignIn = function(googleUser) {
-		 document.getElementById('googleButton').innerText = "Signed in";
-	};
-
-	var onError = function(error) {
+	var onFailure = function(error) {
+		console.log(error);
 		alert(JSON.stringify(error, undefined, 2));
 	};
 
-	auth2 = gapi.auth2.init(values);
-	console.log("gapi initialised with given values.");
-
-	div = document.getElementById('googleButton');
-	auth2.attachClickHandler(element, {}, onSignIn, onError);
 };
 
-var onSignIn = function() {
-	var auth2 = gapi.auth2.getAuthInstance();
-	var googleUser = auth2.currentUser.get();
-	var id = googleUser.getId();
-	var id_token = googleUser.getAuthResponse().id_token;
 
-	console.log(id);
-	console.log(id_token);
-
-	window.location.replace('auth.php?idtoken=' + id_token);
-};
 
 var signOut = function() {
 	var auth2 = gapi.auth2.getAuthInstance();
