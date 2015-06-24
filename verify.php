@@ -1,10 +1,10 @@
-<?php
+<?php 
 
 	/**
 	 * 	@initialize TPO
 	**/
 	include_once('init.php');
-
+	
 	/**
 	 *	@initialize $memory
 	**/
@@ -13,20 +13,19 @@
 		echo '<h1>Invalid Request</h1>';
 		exit;
 	}
-
+	
 	/**
 	 *	@launch Verify Service
 	**/
-	$verify_msg = array(
+	$memory = Snowblozm::run(array(
 		'service' => 'invoke.launch.workflow.workflow',
 		'message' => array(
 			'service' => 'people.person.verify.workflow',
 			'username' => $_GET['username'],
 			'verify' => $_GET['verify']
 		)
-	);
-	$memory = Snowblozm::run($verify_msg, $memory);
-
+	), $memory);
+	
 	if($memory['message']['valid']){
 		echo '<h2>Account Verified Successfully</h2><p>You may now login <a href="'.ROOTPATH.'/#!/view/#login/">here</a>.</p>';
 	}
@@ -36,5 +35,5 @@
 			'details' => $memory['details']
 		)).'</p>';
 	}
-
+	
 ?>
