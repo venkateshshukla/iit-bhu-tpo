@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="google-signin-client_id" content="244942183777-fi8bp76m3in1rueqjnkghp152d4hfpga.apps.googleusercontent.com" />
 		<base href="<?php echo ROOTPATH ?>/"  />
 		<link rel='shortcut icon' href="ui/img/executive/itbhu.png"/>
 		<!--<link rel="stylesheet" type="text/css" href="ui/css/jquery.jtweetsanywhere-1.3.1.css" />-->

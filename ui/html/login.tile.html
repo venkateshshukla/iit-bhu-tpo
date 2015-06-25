@@ -1,14 +1,8 @@
 <ul class="hover-menu vertical fright">
   <li>
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script src="https://apis.google.com/js/auth2.js?onload=signInInit" async defer></script>
     <script src="ui/js/signin.js"></script>
-
-    <a id ="customBtn" onclick="signInInit()";>SignIn<img src="ui/img/officials/google-openid.png" alt="GOOGLE" class="thumbhead" style="margin: -8px 0;"></a>
-
-
-    <!-- div title="Sign In with IIT (BHU) Varanasi Email">Sign In <img src="ui/img/officials/google-openid.png" alt="GOOGLE" class="thumbhead" style="margin: -8px 0;"></div -->
+    <a id="google-signin" style="visibility:hidden" onclick="onSignIn();" >Sign In <img src="ui/img/officials/google-openid.png" alt="GOOGLE" class="thumbhead" style="margin: -8px 0;"></a>
     <!--a href="auth.php?openid_identifier=https://www.google.com/accounts/o8/id" title="Sign In with IIT (BHU) Varanasi Email">Sign In <img src="ui/img/officials/google-openid.png" alt="GOOGLE" class="thumbhead" style="margin: -8px 0;"></a-->
     <ul class="menu-item">
       <li><a href="#!/view/#login/" class="navigate" >Sign In with Password<!--<img src="ui/img/officials/password.png" alt="PASSWORD" class="thumbhead" style="margin: -8px 0;">--></a></li>
